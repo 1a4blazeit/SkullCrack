@@ -30,18 +30,45 @@ public class PlayerController : MonoBehaviour {
 	*/
 	void Move (int direction) {
 		
+		Collider2D hitCollider;
+		
+		
 		switch(direction) {
 			case 0: 
-				gameObject.transform.position = gameObject.transform.position + new Vector3(0,1,0); 
+				hitCollider = Physics2D.OverlapCircle(gameObject.transform.position + new Vector3(0,1,0), 0.2f);
+				if (!hitCollider) {
+					gameObject.transform.position = gameObject.transform.position + new Vector3(0,1,0); 
+				}
+				else {
+					
+				}
 				break;
 			case 1: 
-				gameObject.transform.position = gameObject.transform.position + new Vector3(1,0,0);
+				hitCollider = Physics2D.OverlapCircle(gameObject.transform.position + new Vector3(1,0,0), 0.2f);
+				if (!hitCollider) {
+					gameObject.transform.position = gameObject.transform.position + new Vector3(1,0,0);
+				}
+				else {
+					
+				}
 				break;
 			case 2: 
-				gameObject.transform.position = gameObject.transform.position + new Vector3(-1,0,0);
+				hitCollider = Physics2D.OverlapCircle(gameObject.transform.position + new Vector3(-1,0,0), 0.2f);
+				if (!hitCollider) {
+					gameObject.transform.position = gameObject.transform.position + new Vector3(-1,0,0);
+				}
+				else {
+					
+				}
 				break;
 			case 3: 
-				gameObject.transform.position = gameObject.transform.position + new Vector3(0,-1,0);
+				hitCollider = Physics2D.OverlapCircle(gameObject.transform.position + new Vector3(0,-1,0), 0.2f);
+				if (!hitCollider) {
+					gameObject.transform.position = gameObject.transform.position + new Vector3(0,-1,0);
+				}
+				else {
+					
+				}
 				break;
 		}
 	}
